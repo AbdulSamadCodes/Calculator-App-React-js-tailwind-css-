@@ -1,4 +1,20 @@
 :root {
+  /* spacings */
+  --output-window-padding-y:1.1rem;
+  --output-window-padding-x:1rem;
+
+  --keypad-padding:0.8rem;
+  /* widths */
+  --calculator-maxWidth:375px;
+
+  /* radii */
+  --component-radius:0.8rem;
+
+  /* colors */
+  --clr-switcher-ball:hsl(25, 98%, 40%);
+
   /* typography */
-  --ff-League-Spartan: "League Spartan", sans-serif;;
+  --fs-output-window:2rem;
+
+  --ff-League-Spartan: "League Spartan", sans-serif;
 }
