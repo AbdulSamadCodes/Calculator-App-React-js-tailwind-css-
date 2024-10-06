@@ -2,52 +2,153 @@
 @tailwind components;
 @tailwind utilities;
 
-.calculator{
-  max-width:var(--calculator-maxWidth);
+/* resused styles */
+.keypad,
+.output_window {
+  border-radius: var(--component-radius);
+}
+
+.keypad,
+.switcher {
+  background-color: hsl(223, 31%, 20%);
+}
+
+.basic-keys,
+.functional-keys,
+.keypad {
+  --gap: 1rem;
+
+  gap: var(--gap);
+}
+
+/* main styles */
+.calculator {
+  max-width: var(--calculator-maxWidth);
 }
 
 .switcher {
   width: 120%;
-  height: 22px;
+  height: 1.375rem;
   position: relative;
-  margin-block-start: 5px;
-  border-radius: 12px;
+  margin-block-start: 0.312rem;
+  border-radius: 0.75rem;
 }
 
 .switcher_ball {
-  --left-pos:0.3rem;
-  --top-pos:50%;
+  --left-pos: 0.3rem;
+  --top-pos: 50%;
 
-  position:absolute;
-  width:0.8rem;
-  aspect-ratio:1/1;
-  border-radius:50%;
-  background-color:var(--clr-switcher-ball);
-  top:var(--top-pos);
-  left:var(--left-pos);
-  transform:translateY(-50%);
+  position: absolute;
+  width: 0.8rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--clr-switcher-ball);
+  top: var(--top-pos);
+  left: var(--left-pos);
+  transform: translateY(-50%);
 }
 
-.keypad,
+/* output window styles */
 .output_window {
-  border-radius:var(--component-radius);
+  --text-alignment-pos: right;
+
+  padding: var(--output-window-padding-y) var(--output-window-padding-x);
+  background-color: hsl(224, 36%, 15%);
+  font-size: var(--fs-output-window);
+  text-align: var(--text-alignment-pos);
 }
 
-.keypad,
-.switcher {
-  background-color:hsl(223, 31%, 20%);
-}
-
-.output_window {
-  --text-alignment-pos:right;
-  
-  padding:var(--output-window-padding-y) var(--output-window-padding-x);
-  background-color:hsl(224, 36%, 15%);
-  font-size:var(--fs-output-window);
-  font-weight:bold;
-  text-align:var(--text-alignment-pos);
-}
-
+/* keypad styles */
 .keypad {
-  padding:var(--keypad-padding);
+  --keypad-padding:1.2rem 1.4rem;
+
+  padding: var(--keypad-padding);
+}
+
+.basic-keys {
+  --min-width: 2.5rem;
+  --grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr));
+
+  grid-template-columns: var(--grid-template-columns);
+  gap: var(--gap);
+}
+
+.functional-keys {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* keys/button styles */
+.button {
+  --background-color: unset;
+  --color: unset;
+  --box-shadow: 0px;
+  --font-size: unset;
+
+  --padding: 0.5rem 1rem;
+
+  display: grid;
+  place-content: center;
+  padding: var(--padding);
+  font-size: var(--font-size);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--color);
+
+  box-shadow: var(--box-shadow);
+}
+
+.primary-button {
+  --background-color: hsl(30, 25%, 89%);
+  --color: hsl(221, 14%, 31%);
+  --box-shadow: 0px 2px 0px 2px hsl(28, 16%, 65%);
+  --font-size: 1.6rem;
+}
+
+.DEL-button,
+.reset-button {
+  --background-color: hsl(225, 21%, 49%);
+  --color: hsl(0, 100%, 100%);
+  --box-shadow: 0px 2px 0px 2px hsl(224, 28%, 35%);
+}
+
+.reset-btn,
+.equals-button {
+  padding: 0.8rem 1rem;
+}
+
+.equals-button {
+  --background-color: hsl(6, 63%, 50%);
+  --color: hsl(0, 100%, 100%);
+  --box-shadow: 0px 2px 0px 2px hsl(6, 70%, 34%);
+}
+
+/* media queries */
+
+/* for larger devices */
+@media (width > 768px) {
+  body {
+    align-items:center;
+  }
+
+  .calculator {
+    --calculator-maxWidth: 400px;
+  }
+
+  .keypad {
+    --keypad-padding:1.8rem 1.4rem;
+  }
+
+  .basic-keys {
+    --min-width: 60px;
+  }
+
+  .button {
+    --padding: 0.2rem 1rem;
+  }
+
+  .basic-keys,
+  .functional-keys,
+  .keypad {
+    --gap: 1.3rem;
+  }
 }

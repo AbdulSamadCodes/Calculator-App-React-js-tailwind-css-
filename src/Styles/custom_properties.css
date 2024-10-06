@@ -3,9 +3,8 @@
   --output-window-padding-y:1.1rem;
   --output-window-padding-x:1rem;
 
-  --keypad-padding:0.8rem;
   /* widths */
-  --calculator-maxWidth:375px;
+  --calculator-maxWidth:300px;
 
   /* radii */
   --component-radius:0.8rem;

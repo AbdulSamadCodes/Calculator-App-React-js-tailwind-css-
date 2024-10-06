@@ -23,7 +23,7 @@ function ThemeOptions() {
 
 function ThemeSwitcher() {
   return (
-    <div class="flex justify-center flex-col items-center">
+    <div className="flex justify-center flex-col items-center">
       <ThemeOptions />
 
       <span className="switcher">

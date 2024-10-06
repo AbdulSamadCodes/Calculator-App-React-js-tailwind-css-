@@ -8,7 +8,8 @@ function Calculator() {
     <div className="calculator grid gap-6 ms-auto me-auto">
       <Header />
       <OutputWindow />
-    </div>
+      <Keypad />
+      </div>
   );
 }
 

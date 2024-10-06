@@ -2,7 +2,7 @@ import { React } from 'react';
 
 function OutputWindow() {
   return (  
-    <div class="output_window text-white">
+    <div className="output_window text-white font-bold">
       399,981
     </div>
   );
