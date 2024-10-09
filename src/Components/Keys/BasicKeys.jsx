@@ -6,8 +6,8 @@ import buttons from '/src/Components/Buttons/buttons.js';
 function BasicKeys() {
   return (
     <div className="basic-keys grid">
-      {buttons["primary-buttons"].map((btnText) => {
-        return <PrimaryButton btnText={btnText} />;
+      {buttons["primary-buttons"].map((btnText,index) => {
+        return <PrimaryButton btnText={btnText} key={index}/>;
       })
       }
       <DELButton btnText={buttons["del-button"]} />

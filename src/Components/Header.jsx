@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function Logo() {
   return (
@@ -11,23 +11,33 @@ function Logo() {
   );
 }
 
-function ThemeOptions() {
-  return (
-    <div className="theme_options flex items-center gap-4">
-      <span className="text-xs text-white font-bold">1</span>
-      <span className="text-xs text-white font-bold">2</span>
-      <span className="text-xs text-white font-bold">3</span>
-    </div>
-  );
-}
-
 function ThemeSwitcher() {
+  const themeOptions = useRef(null);
+
+  useEffect(() => {
+    
+  })
+
   return (
     <div className="flex justify-center flex-col items-center">
-      <ThemeOptions />
+      <div className="theme_options flex items-center gap-4 relative" ref={themeOptions}>
+        <span className=
+          "text-xs text-white font-bold">
+          1</span>
 
+        <span className=
+          "text-xs text-white font-bold">
+          2</span>
+
+        <span className=
+          "text-xs text-white font-bold">
+          3</span>
+      </div>
       <span className="switcher">
-        <div className="switcher_ball"></div>
+        <div className=
+          "switcher_ball absolute"
+        >
+        </div>
       </span>
     </div>
   );
