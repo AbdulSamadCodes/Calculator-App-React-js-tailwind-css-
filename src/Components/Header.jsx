@@ -12,15 +12,29 @@ function Logo() {
 }
 
 function ThemeSwitcher() {
-  const themeOptions = useRef(null);
+  const [togglerIndex, setTogglerIndex] = useState(0);
+
+  const togglerPosRef = useRef(0);
+  const themeOptionsRef = useRef(null);
+  const togglerRef = useRef(null);
+
+  function updateToggler() {  
+    const totalThemeOptions = themeOptionsRef.current.children.length;
+
+    setTogglerIndex(prevIndex => (prevIndex + 1) % totalThemeOptions);
+  }
 
   useEffect(() => {
-    
+    const GUTTER_X = 5;
+    togglerPosRef.current = togglerIndex === 0 ? GUTTER_X
+      : themeOptionsRef.current.children[togglerIndex].offsetLeft;
+
+    togglerRef.current.style.left = `${togglerPosRef.current}px`;
   })
 
   return (
     <div className="flex justify-center flex-col items-center">
-      <div className="theme_options flex items-center gap-4 relative" ref={themeOptions}>
+      <div className="theme_options flex items-center gap-4 relative" ref={themeOptionsRef}>
         <span className=
           "text-xs text-white font-bold">
           1</span>
@@ -36,7 +50,8 @@ function ThemeSwitcher() {
       <span className="switcher">
         <div className=
           "switcher_ball absolute"
-        >
+          onClick={updateToggler}
+          ref={togglerRef}>
         </div>
       </span>
     </div>

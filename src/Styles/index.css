@@ -110,6 +110,11 @@
   --box-shadow: 0px 2px 0px 2px hsl(224, 28%, 35%);
 }
 
+.DEL-button {
+  grid-row:1/2;
+  grid-column:4/-1;
+}
+
 .reset-btn,
 .equals-button {
   padding: 0.8rem 1rem;
