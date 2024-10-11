@@ -1,10 +1,10 @@
-import { React } from 'react';
-import { useState, useRef, useEffect } from 'react';
+import { React, useState, useRef, useEffect } from 'react';
 
 function Logo() {
   return (
     <div className="logo">
-      <a href="#" className="text-white font-bold text-2xl">
+      <a href="#" className=
+        "text-white font-bold text-2xl">
         calc
       </a>
     </div>
@@ -18,7 +18,7 @@ function ThemeSwitcher() {
   const themeOptionsRef = useRef(null);
   const togglerRef = useRef(null);
 
-  function updateToggler() {  
+  function updateToggler() {
     const totalThemeOptions = themeOptionsRef.current.children.length;
 
     setTogglerIndex(prevIndex => (prevIndex + 1) % totalThemeOptions);
@@ -31,6 +31,7 @@ function ThemeSwitcher() {
 
     togglerRef.current.style.left = `${togglerPosRef.current}px`;
   })
+
 
   return (
     <div className="flex justify-center flex-col items-center">
@@ -61,8 +62,8 @@ function ThemeSwitcher() {
 function ThemeChangeComponent() {
   return (
     <div className="flex items-end gap-7">
-      <h4 className="text-white font-bold text-xs tracking-widest">THEME</h4>
-
+      <h4 className=
+        "text-white font-bold text-xs tracking-widest">THEME</h4>
       <ThemeSwitcher />
     </div>
   );
@@ -70,7 +71,8 @@ function ThemeChangeComponent() {
 
 function Header() {
   return (
-    <header className="flex items-center justify-between">
+    <header className=
+      "flex items-center justify-between">
       <Logo />
       <ThemeChangeComponent />
     </header>
